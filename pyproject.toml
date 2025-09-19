@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "biophi"
+version = "1.0.11"
+description = "BioPhi: Platform for antibody design, humanization and humanness evaluation"
+authors = ["David Prihoda <david.prihoda@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/Merck/BioPhi"
+repository = "https://github.com/Merck/BioPhi"
+keywords = ["biophi", "antibody", "humanization", "humanness", "evaluation", "sapiens", "oasis"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+packages = [{include = "biophi"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+# Core dependencies from environment.yml
+click = ">=7"
+pandas = "^2.0"
+sqlalchemy = "<2"
+flask = "<3.0.0"
+werkzeug = "<3.0.0"
+redis = "^4.0"
+celery = "^5.0"
+biopython = "^1.81"
+requests = "^2.0"
+tqdm = "^4.0"
+xlsxwriter = "^3.0"
+humanize = "^4.0"
+sapiens = ">=1.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.0"
+
+[tool.poetry.scripts]
+biophi = "biophi.common.cli.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

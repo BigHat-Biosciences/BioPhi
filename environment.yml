@@ -3,14 +3,14 @@ channels:
   - bioconda
   - conda-forge
 dependencies:
-  - python = 3.9
+  - python >= 3.9
   - pip
   - abnumber == 0.3.2
   - anarci == 2020.04.23
   - hmmer >= 3.1
   - pip:
     - click >= 7
-    - pandas < 2.2
+    - pandas
     - sqlalchemy < 2
     - flask < 3.0.0
     - werkzeug < 3.0.0
