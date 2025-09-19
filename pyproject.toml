@@ -20,7 +20,7 @@ packages = [{include = "biophi"}]
 python = ">=3.9,<4.0"
 # Core dependencies from environment.yml
 click = ">=7"
-pandas = "^2.0"
+pandas = "^2.2.1"
 sqlalchemy = "<2"
 flask = "<3.0.0"
 werkzeug = "<3.0.0"
