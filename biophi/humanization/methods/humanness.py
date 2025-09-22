@@ -364,7 +364,7 @@ def get_oas_hits(peptides: Union[str, List[str]], engine: Engine, filter_chain=N
                 "LEFT JOIN subjects ON peptides.subject=subjects.id " \
                 "WHERE peptide IN (" + ",".join("?" * len(peptides)) + ") AND subjects.StudyPath <> 'Corcoran_2016' " \
                 + filter_chain_statement
-    return pd.read_sql(statement, params=peptides, con=engine)
+    return pd.read_sql(statement, params=peptides, con=engine.raw_connection())
 
 
 FRACTION_SUBJECTS_THRESHOLDS = np.arange(0, 0.91, 0.01)
